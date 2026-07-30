@@ -27,6 +27,14 @@ export function websiteJsonLd() {
   }
 }
 
+export function profilePageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    mainEntity: personJsonLd(),
+  }
+}
+
 export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",

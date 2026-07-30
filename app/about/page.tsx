@@ -1,8 +1,18 @@
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import type { Metadata } from "next"
 
-import { aboutBio, interests, languages, site } from "@/data/site"
+import { Philosophy } from "@/components/sections/philosophy"
+import { Education } from "@/components/sections/education"
+import { aboutBio, aboutStory, interests, languages, site } from "@/data/site"
+import { buildMetadata } from "@/lib/metadata"
+import { profilePageJsonLd } from "@/lib/structured-data"
+
+export const metadata: Metadata = buildMetadata({
+  title: "About",
+  description:
+    "The story, values and interdisciplinary background behind MD Solyman Hossen's approach to software engineering.",
+  path: "/about",
+})
 
 const STRIP_PHOTOS = [
   { src: "/images/portrait-strip-1.jpg", alt: "Solyman on the coast, part of his travelling interest" },
@@ -10,43 +20,45 @@ const STRIP_PHOTOS = [
   { src: "/images/portrait-strip-3.jpg", alt: "Solyman on the coast, part of his travelling interest" },
 ]
 
-export function AboutPreview() {
+export default function AboutPage() {
   return (
-    <section className="border-b py-20 sm:py-28">
-      <div className="container-page">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.8fr_1.5fr_1fr]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd()) }}
+      />
+
+      <div className="container-page py-16 sm:py-24">
+        <p className="font-mono text-xs uppercase tracking-wider text-primary">About</p>
+        <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+          From civil engineering and Bangla studies to AI-driven systems.
+        </h1>
+
+        <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.5fr_1fr]">
           <div className="relative aspect-4/5 overflow-hidden rounded-2xl border lg:aspect-auto">
             <Image
-              src="/images/portrait-about.jpg"
+              src="/images/portrait-hero.jpg"
               alt={`${site.name} outdoors`}
               fill
               sizes="(min-width: 1024px) 20vw, 100vw"
-              className="object-cover grayscale"
+              className="object-cover object-top grayscale"
             />
           </div>
 
-          <div>
-            <p className="font-mono text-xs uppercase tracking-wider text-primary">About</p>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
-              The engineer behind the systems.
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">{aboutBio}</p>
-            <Link
-              href="/about"
-              className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-            >
-              Read the full story
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </Link>
+          <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
+            <p>{aboutBio}</p>
+            {aboutStory.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
 
           <div className="space-y-6 rounded-lg border bg-card p-6">
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Location</h3>
+              <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Location</h2>
               <p className="mt-1 text-sm text-foreground">{site.location}</p>
             </div>
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Languages</h3>
+              <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Languages</h2>
               <ul className="mt-1 space-y-1 text-sm text-foreground">
                 {languages.map((language) => (
                   <li key={language.name}>
@@ -56,7 +68,7 @@ export function AboutPreview() {
               </ul>
             </div>
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Interests</h3>
+              <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Interests</h2>
               <p className="mt-1 text-sm text-foreground">{interests.join(" · ")}</p>
             </div>
           </div>
@@ -81,6 +93,9 @@ export function AboutPreview() {
           </div>
         </div>
       </div>
-    </section>
+
+      <Philosophy />
+      <Education />
+    </>
   )
 }

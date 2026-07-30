@@ -52,6 +52,12 @@ export const interests = ["Travelling", "Table tennis"] as const
 export const interdisciplinaryStory =
   "An interdisciplinary journey from civil engineering and Bangla studies to software engineering, systems architecture and AI-driven development."
 
+export const aboutStory = [
+  "My path into software engineering didn't start with a computer science degree. It started with a Diploma in Civil Engineering, followed by a B.A. (Honours) in Bangla, and later a postgraduate degree in Computer & Information Sciences at Jahangirnagar University.",
+  "Each step taught me something the others didn't. Civil engineering gave me a structural, systems-first way of thinking. Studying Bangla sharpened how I read, structure and communicate ideas. Formal study in computer science gave me the language to turn that thinking into software.",
+  "That combination shows up directly in how I work today: translating ambiguous business requirements into clear technical systems, and explaining engineering decisions to people who aren't engineers.",
+]
+
 export const contactCta = {
   headline: "Let's build a system that is designed to scale.",
   supportingText:

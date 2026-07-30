@@ -8,7 +8,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t">
+    <footer className="border-t print:hidden">
       <div className="container-page grid grid-cols-1 gap-10 py-16 md:grid-cols-3">
         <div>
           <span className="flex size-8 items-center justify-center rounded-md border border-primary/40 bg-primary/10 font-mono text-sm font-semibold text-primary">

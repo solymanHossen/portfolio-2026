@@ -9,12 +9,15 @@ interface RouteMetadataInput {
   title: string
   description: string
   path: string
-  ogImage?: string
 }
 
-export function buildMetadata({ title, description, path, ogImage }: RouteMetadataInput): Metadata {
+/**
+ * Open Graph / Twitter images are intentionally omitted here — each route
+ * segment's opengraph-image.tsx file convention supplies them automatically,
+ * cascading from app/opengraph-image.tsx unless a segment defines its own.
+ */
+export function buildMetadata({ title, description, path }: RouteMetadataInput): Metadata {
   const url = new URL(path, siteUrl).toString()
-  const images = [ogImage ?? "/og-default.png"]
 
   return {
     title,
@@ -26,13 +29,11 @@ export function buildMetadata({ title, description, path, ogImage }: RouteMetada
       title,
       description,
       siteName,
-      images,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images,
     },
   }
 }

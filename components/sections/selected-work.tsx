@@ -13,7 +13,7 @@ export function SelectedWork() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="font-mono text-xs uppercase tracking-wider text-primary">Selected Engineering Work</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+            <h2 className="mt-3 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
               Systems I&rsquo;ve helped design, optimise and scale.
             </h2>
           </div>

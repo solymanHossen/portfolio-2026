@@ -1,4 +1,14 @@
-import type { ProjectSummary } from "@/types/project"
+import type { ProjectSummary, ProjectTag } from "@/types/project"
+
+export const TAG_LABELS: Record<ProjectTag, string> = {
+  "full-stack": "Full Stack",
+  "ai-automation": "AI Automation",
+  nextjs: "Next.js",
+  laravel: "Laravel",
+  mern: "MERN",
+  performance: "Performance",
+  "api-integration": "API Integration",
+}
 
 export const projects: ProjectSummary[] = [
   {
@@ -74,4 +84,18 @@ export const projects: ProjectSummary[] = [
 
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug)
+}
+
+export function getTagCounts() {
+  const counts = new Map<ProjectTag, number>()
+
+  for (const project of projects) {
+    for (const tag of project.tags) {
+      counts.set(tag, (counts.get(tag) ?? 0) + 1)
+    }
+  }
+
+  return Array.from(counts.entries())
+    .map(([tag, count]) => ({ tag, label: TAG_LABELS[tag], count }))
+    .sort((a, b) => b.count - a.count)
 }

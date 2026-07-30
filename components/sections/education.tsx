@@ -7,7 +7,7 @@ export function Education() {
     <section className="border-b py-20 sm:py-28">
       <div className="container-page">
         <p className="font-mono text-xs uppercase tracking-wider text-primary">Education & Certification</p>
-        <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+        <h2 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
           An interdisciplinary path into engineering.
         </h2>
         <p className="mt-4 max-w-2xl text-base text-muted-foreground">{interdisciplinaryStory}</p>

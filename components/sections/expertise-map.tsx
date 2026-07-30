@@ -6,7 +6,7 @@ export function ExpertiseMap() {
     <section id="expertise" className="scroll-mt-16 border-b py-20 sm:py-28">
       <div className="container-page">
         <p className="font-mono text-xs uppercase tracking-wider text-primary">Technical Expertise</p>
-        <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+        <h2 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
           A capability map, not a percentage guess.
         </h2>
 
