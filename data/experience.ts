@@ -1,0 +1,54 @@
+import type { ExperienceEntry } from "@/types/content"
+
+export const experience: ExperienceEntry[] = [
+  {
+    id: "mediusware-software-engineer",
+    role: "Software Engineer",
+    company: "Mediusware Ltd",
+    location: "Mohammadpur, Dhaka, Bangladesh",
+    startDate: "2024-06",
+    endDate: "present",
+    summary:
+      "Leading full-stack delivery and architecture decisions across dashboard, commerce and automation platforms.",
+    tags: ["ai-automation", "laravel", "nextjs", "performance", "api-integration"],
+    highlights: [
+      "Architected AI-powered, agentic automation workflows using n8n to eliminate manual business processes and accelerate delivery.",
+      "Drove performance optimisation across the stack.",
+      "Reduced production bugs by 40% through TypeScript migration.",
+      "Improved system performance using query and rendering optimisation.",
+      "Led development of the HouseBrands Dashboard using Laravel and Next.js.",
+      "Designed scalable, API-first architecture.",
+      "Built a multi-vendor eCommerce platform with granular RBAC.",
+      "Designed high-performance REST APIs for frontend integration.",
+      "Developed custom WordPress plugins integrated with external APIs.",
+      "Mentored junior developers.",
+      "Led code reviews to promote clean and maintainable architecture.",
+    ],
+  },
+  {
+    id: "mediusware-associate-developer",
+    role: "Associate Software Developer",
+    company: "Mediusware Ltd",
+    location: "Mohammadpur, Dhaka, Bangladesh",
+    startDate: "2023-01",
+    endDate: "2024-06",
+    summary: "Built core modules and contributed full-stack features across MERN-based projects.",
+    tags: ["mern"],
+    highlights: [
+      "Built core modules for web applications.",
+      "Worked with modern JavaScript frameworks.",
+      "Contributed to full-stack feature development across MERN-based projects.",
+    ],
+  },
+  {
+    id: "fiverr-junior-engineer",
+    role: "Junior Software Engineer",
+    company: "Fiverr, Freelance",
+    location: "Remote",
+    startDate: "2022-01",
+    endDate: "2022-12",
+    summary: "Delivered remote full-stack development projects for international clients.",
+    tags: ["full-stack"],
+    highlights: ["Delivered remote full-stack development projects for international clients."],
+  },
+]

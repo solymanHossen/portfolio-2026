@@ -2,48 +2,56 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/components/ui/sonner"
+import { SkipLink } from "@/components/layout/skip-link"
+import { SiteHeader } from "@/components/layout/site-header"
+import { SiteFooter } from "@/components/layout/site-footer"
+import { BackToTop } from "@/components/layout/back-to-top"
+import { siteName, siteUrl } from "@/lib/metadata"
+import { personJsonLd, websiteJsonLd } from "@/lib/structured-data"
 import "./globals.css"
 
-const geistSans = Geist({ subsets: ["latin"] })
-const geistMono = Geist_Mono({ subsets: ["latin"] })
+const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" })
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
 export const metadata: Metadata = {
-  title: "Md. Solyman Hossen - Senior Full Stack Engineer",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "MD Solyman Hossen | Full Stack Software Engineer",
+    template: "%s | MD Solyman Hossen",
+  },
   description:
-    "Senior full-stack engineer specializing in enterprise architecture, microservices, and scalable systems. 3+ years building high-performance applications with React, Next.js, Node.js, and Laravel.",
+    "Full Stack Software Engineer specialising in scalable web platforms, Next.js, MERN, Laravel, performance optimisation and AI-assisted automation.",
   keywords: [
-    "full-stack engineer",
-    "backend developer",
-    "software architect",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Laravel",
+    "Full Stack Software Engineer",
+    "Next.js Developer",
+    "MERN Stack Developer",
+    "Laravel Developer",
+    "AI Automation Engineer",
+    "Software Engineer in Bangladesh",
+    "Scalable Web Application Developer",
+    "REST API Developer",
+    "Performance Optimisation Engineer",
   ],
-  authors: [{ name: "Md. Solyman Hossen", url: "https://solyman.dev" }],
-  creator: "Md. Solyman Hossen",
+  authors: [{ name: "MD Solyman Hossen" }],
+  creator: "MD Solyman Hossen",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://solyman.dev",
-    title: "Md. Solyman Hossen - Senior Full Stack Engineer",
-    description: "Portfolio of senior full-stack engineer specializing in enterprise architecture and scalable systems",
-    siteName: "Solyman Portfolio",
-    images: [
-      {
-        url: "https://solyman.dev/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Solyman Hossen Portfolio",
-      },
-    ],
+    url: siteUrl,
+    title: "MD Solyman Hossen | Full Stack Software Engineer",
+    description:
+      "Full Stack Software Engineer specialising in scalable web platforms, Next.js, MERN, Laravel, performance optimisation and AI-assisted automation.",
+    siteName,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: siteName }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Md. Solyman Hossen - Senior Full Stack Engineer",
-    description: "Portfolio of senior full-stack engineer specializing in enterprise architecture",
-    creator: "@solyman",
-    images: ["https://solyman.dev/og-image.png"],
+    title: "MD Solyman Hossen | Full Stack Software Engineer",
+    description:
+      "Full Stack Software Engineer specialising in scalable web platforms, Next.js, MERN, Laravel, performance optimisation and AI-assisted automation.",
+    images: ["/og-default.png"],
   },
   robots: {
     index: true,
@@ -57,15 +65,22 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://solyman.dev",
+    canonical: siteUrl,
   },
-    generator: 'v0.app'
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: light)", sizes: "32x32", type: "image/png" },
+      { url: "/icon-dark-32x32.png", media: "(prefers-color-scheme: dark)", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+  },
 }
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#050505" },
+    { media: "(prefers-color-scheme: light)", color: "#fcfcfa" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -79,29 +94,26 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        {/* Structured data for rich snippets */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Md. Solyman Hossen",
-              url: "https://solyman.dev",
-              sameAs: ["https://linkedin.com/in/solymanhhossen", "https://github.com/solyman"],
-              jobTitle: "Senior Full Stack Engineer",
-              workLocation: {
-                "@type": "Place",
-                name: "Dhaka, Bangladesh",
-              },
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
         />
       </head>
-      <body className={`font-sans antialiased bg-dark text-light`}>
-        {children}
+      <body className="font-sans antialiased">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <SkipLink />
+          <SiteHeader />
+          <main id="main-content">{children}</main>
+          <SiteFooter />
+          <BackToTop />
+          <Toaster />
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
