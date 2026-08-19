@@ -1,10 +1,14 @@
 import "server-only"
 import { z } from "zod"
 
+// Blank keys in .env (e.g. `RESEND_API_KEY=`) arrive as "", not undefined —
+// normalize those to undefined so `.optional()` treats them as unset.
+const blankToUndefined = (val: unknown) => (val === "" ? undefined : val)
+
 const envSchema = z.object({
-  RESEND_API_KEY: z.string().min(1).optional(),
-  CONTACT_TO_EMAIL: z.string().email().optional(),
-  NEXT_PUBLIC_SITE_URL: z.string().url().optional(),
+  RESEND_API_KEY: z.preprocess(blankToUndefined, z.string().min(1).optional()),
+  CONTACT_TO_EMAIL: z.preprocess(blankToUndefined, z.string().email().optional()),
+  NEXT_PUBLIC_SITE_URL: z.preprocess(blankToUndefined, z.string().url().optional()),
 })
 
 export const env = envSchema.parse({
