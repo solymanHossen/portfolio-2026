@@ -70,11 +70,11 @@ export function CommandPalette() {
       <Button
         variant="outline"
         size="sm"
-        className="gap-2 text-muted-foreground font-normal"
+        className="h-10 gap-2 rounded-full px-4 text-muted-foreground font-normal"
         onClick={() => setOpen(true)}
       >
-        <CommandIcon className="size-3.5" />
-        <span className="hidden sm:inline">Search</span>
+        <CommandIcon className="size-4" />
+        <span className="hidden sm:inline text-sm">Search</span>
         <kbd className="hidden sm:inline-flex items-center gap-0.5 rounded border bg-muted px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">
           &#8984;K
         </kbd>

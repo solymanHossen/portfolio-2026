@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
-import { StatusIndicator } from "@/components/ui/status-indicator"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
 import { CommandPalette } from "@/components/layout/command-palette"
 import { MobileNav } from "@/components/layout/mobile-nav"
@@ -20,11 +20,20 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b bg-background/85 backdrop-blur supports-backdrop-filter:bg-background/70 print:hidden">
       <div className="container-page flex h-20 items-center justify-between gap-4">
         <div className="flex items-center gap-8">
-          <Link href="/" className="flex items-center gap-2" aria-label={`${site.name} — home`}>
-            <span className="flex size-10 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-mono text-base font-semibold text-primary">
-              {site.monogram}
-            </span>
-          </Link>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link href="/" className="relative flex items-center gap-2" aria-label={`${site.name} — home`}>
+                <span className="flex size-10 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-mono text-base font-semibold text-primary">
+                  {site.monogram}
+                </span>
+                <span className="absolute -bottom-0.5 -right-0.5 flex size-3.5" aria-hidden="true">
+                  <span className="absolute inset-0 animate-ping rounded-full bg-primary opacity-75" />
+                  <span className="relative size-3.5 rounded-full bg-primary ring-2 ring-background" />
+                </span>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="bottom">{site.availability}</TooltipContent>
+          </Tooltip>
           <nav aria-label="Primary" className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => {
               const Icon = NAV_ICONS[link.href]
@@ -49,7 +58,6 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-3">
-          <StatusIndicator label={site.availability} variant="available" pulse className="hidden xl:inline-flex" />
           <div className="hidden sm:block">
             <CommandPalette />
           </div>
