@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MD Solyman Hossen | Full Stack Software Engineer",
+    title: "Md Solyman Hossen | Full Stack Software Engineer",
     description:
       "Full Stack Software Engineer specialising in scalable web platforms, Next.js, MERN, Laravel, performance optimisation and AI-assisted automation.",
   },
