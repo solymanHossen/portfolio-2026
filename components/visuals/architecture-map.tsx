@@ -1,6 +1,7 @@
 "use client"
 
 import { Fragment, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 import { Bot, Database, Gauge, Layout, Webhook, Workflow } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -20,9 +21,16 @@ export function ArchitectureMap() {
 
   return (
     <div>
-      <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-3" role="list" aria-label="Engineering architecture flow">
+      <div
+        className="flex items-center gap-2 overflow-x-auto px-4 py-2 sm:justify-center sm:overflow-visible sm:px-0"
+        role="list"
+        aria-label="Engineering architecture flow"
+      >
         {nodes.map((node, index) => {
           const Icon = node.icon
+          const isActive = activeIndex === index
+          const isConnectorActive = activeIndex === index || activeIndex === index + 1
+
           return (
             <Fragment key={node.label}>
               <button
@@ -34,31 +42,62 @@ export function ArchitectureMap() {
                 onBlur={() => setActiveIndex(null)}
                 aria-describedby="architecture-map-description"
                 className={cn(
-                  "flex w-24 flex-col items-center gap-2 rounded-lg border bg-card px-3 py-3 text-center transition-colors sm:w-28",
-                  activeIndex === index ? "border-primary/60 bg-primary/5" : "border-border",
+                  "flex w-28 shrink-0 flex-col items-center gap-2.5 rounded-2xl border bg-card px-4 py-4 text-center transition-all duration-300 sm:w-32",
+                  isActive
+                    ? "-translate-y-1 border-primary/60 bg-primary/5 shadow-lg shadow-primary/10 ring-1 ring-primary/20"
+                    : "border-border hover:-translate-y-0.5 hover:shadow-md",
                 )}
               >
-                <Icon className={cn("size-5", activeIndex === index ? "text-primary" : "text-muted-foreground")} aria-hidden="true" />
-                <span className="text-xs font-medium text-foreground">{node.label}</span>
+                <Icon
+                  className={cn("size-6 transition-colors duration-300", isActive ? "text-primary" : "text-muted-foreground")}
+                  aria-hidden="true"
+                />
+                <span className="text-sm font-semibold text-foreground">{node.label}</span>
               </button>
+
               {index < nodes.length - 1 && (
-                <div className="hidden items-center sm:flex" aria-hidden="true">
-                  <span className="h-px w-5 bg-border" />
-                  <span className="size-1.5 rounded-full bg-primary motion-safe:animate-pulse" />
-                  <span className="h-px w-5 bg-border" />
+                <div className="flex shrink-0 items-center" aria-hidden="true">
+                  <span
+                    className={cn(
+                      "h-px w-6 transition-colors duration-300 sm:w-8",
+                      isConnectorActive ? "bg-primary/60" : "bg-border",
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "size-1.5 shrink-0 rounded-full transition-colors duration-300",
+                      isConnectorActive ? "bg-primary motion-safe:animate-pulse" : "bg-border",
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "h-px w-6 transition-colors duration-300 sm:w-8",
+                      isConnectorActive ? "bg-primary/60" : "bg-border",
+                    )}
+                  />
                 </div>
               )}
             </Fragment>
           )
         })}
       </div>
-      <p
-        id="architecture-map-description"
-        aria-live="polite"
-        className="mt-4 min-h-10 text-center font-mono text-xs text-muted-foreground"
-      >
-        {active ? active.description : "Hover or focus a node to see how it fits the system."}
-      </p>
+
+      <div className="mt-6 flex min-h-6 items-center justify-center px-4 text-center">
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={active ? active.label : "default"}
+            initial={{ opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.2 }}
+            id="architecture-map-description"
+            aria-live="polite"
+            className="font-mono text-sm text-muted-foreground"
+          >
+            {active ? active.description : "Hover or focus a node to see how it fits the system."}
+          </motion.p>
+        </AnimatePresence>
+      </div>
     </div>
   )
 }
