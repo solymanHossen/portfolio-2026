@@ -26,7 +26,7 @@ export function SelectedWork() {
           </Link>
         </div>
 
-        <div className="mt-12">
+        <div className="mt-12 space-y-6">
           {featured.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}

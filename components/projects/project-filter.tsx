@@ -39,7 +39,11 @@ export function ProjectFilter({ projects }: { projects: ProjectSummary[] }) {
             </p>
           </div>
         ) : (
-          filtered.map((project) => <ProjectCard key={project.slug} project={project} />)
+          <div className="space-y-6">
+            {filtered.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
         )}
       </div>
     </div>
