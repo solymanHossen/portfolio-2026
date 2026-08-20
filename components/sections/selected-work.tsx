@@ -8,7 +8,7 @@ export function SelectedWork() {
   const featured = [...projects].filter((project) => project.featured).sort((a, b) => a.order - b.order)
 
   return (
-    <section className="border-b py-20 sm:py-28">
+    <section id="selected-work" className="border-b py-20 sm:py-28">
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
