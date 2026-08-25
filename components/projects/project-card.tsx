@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowRight, Lightbulb, TrendingUp, Wrench } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
+import { TodoChip } from "@/components/projects/case-study/todo-chip"
 import type { ProjectSummary } from "@/types/project"
 
 const DETAIL_ROWS = [
@@ -27,22 +28,26 @@ const DETAIL_ROWS = [
 
 export function ProjectCard({ project }: { project: ProjectSummary }) {
   return (
-    <article className="group rounded-3xl border border-border/60 bg-gradient-to-b from-card to-card/70 p-6 shadow-sm transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 sm:p-8">
+    <article className="group rounded-3xl border border-border/40 bg-background p-6 shadow-sm transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-lg sm:p-8">
       <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">{project.category}</p>
           <h3 className="mt-3 text-4xl font-semibold text-foreground text-balance">{project.title}</h3>
           <p className="mt-3 text-lg text-muted-foreground">{project.tagline}</p>
           <div className="mt-5 flex flex-wrap gap-2">
-            {project.techStack.map((tech) => (
-              <Badge
-                key={tech}
-                variant="outline"
-                className="rounded-full border-primary/20 bg-primary/5 text-sm font-normal text-primary"
-              >
-                {tech}
-              </Badge>
-            ))}
+            {project.techStack.map((tech) =>
+              tech.startsWith("TODO") ? (
+                <TodoChip key={tech} note={tech} />
+              ) : (
+                <Badge
+                  key={tech}
+                  variant="outline"
+                  className="rounded-full border-primary/20 bg-primary/5 text-sm font-normal text-primary"
+                >
+                  {tech}
+                </Badge>
+              ),
+            )}
           </div>
         </div>
 
