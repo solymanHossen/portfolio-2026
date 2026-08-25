@@ -35,7 +35,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5" noValidate>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate>
         <input
           type="text"
           tabIndex={-1}
@@ -87,7 +87,7 @@ export function ContactForm() {
           )}
         />
 
-        <Button type="submit" size="lg" disabled={isPending} className="w-full sm:w-auto">
+        <Button type="submit" size="lg" disabled={isPending} className="w-full rounded-full sm:w-auto">
           {isPending ? "Sending…" : "Send Message"}
         </Button>
 
