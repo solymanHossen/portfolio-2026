@@ -21,7 +21,7 @@ export function AboutPreview() {
               alt={`${site.name} outdoors`}
               fill
               sizes="(min-width: 1024px) 20vw, 100vw"
-              className="object-cover grayscale"
+              className="object-cover"
             />
           </div>
 
@@ -74,7 +74,7 @@ export function AboutPreview() {
                   alt={photo.alt}
                   fill
                   sizes="(min-width: 1024px) 15vw, 33vw"
-                  className="object-cover grayscale transition-all duration-500 hover:grayscale-0"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
             ))}

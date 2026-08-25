@@ -45,7 +45,7 @@ export function Hero() {
               fill
               priority
               sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover object-top grayscale contrast-110"
+              className="object-cover object-top"
             />
             <div
               aria-hidden="true"
