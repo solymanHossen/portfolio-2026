@@ -20,8 +20,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-4 z-40 px-4 print:hidden">
       <div className="container-page">
-        <div className="flex h-16 items-center justify-between gap-4 rounded-full border bg-background/85 px-4 shadow-sm backdrop-blur supports-backdrop-filter:bg-background/70">
-          <div className="flex items-center gap-8">
+        <div className="grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4 rounded-full border bg-background/85 px-4 shadow-sm backdrop-blur supports-backdrop-filter:bg-background/70">
+          <div className="flex items-center">
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link href="/" className="relative flex items-center gap-2" aria-label={`${site.name} — home`}>
@@ -36,35 +36,36 @@ export function SiteHeader() {
               </TooltipTrigger>
               <TooltipContent side="bottom">{site.availability}</TooltipContent>
             </Tooltip>
-            <nav aria-label="Primary" className="hidden xl:flex items-center gap-1">
-              {navLinks.map((link) => {
-                const isActive = isNavLinkActive(pathname, link.href)
-
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    aria-current={isActive ? "page" : undefined}
-                    className={cn(
-                      "relative rounded-full px-4 py-2.5 text-base font-medium transition-colors",
-                      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground",
-                    )}
-                  >
-                    {isActive && (
-                      <motion.span
-                        layoutId="active-nav-pill"
-                        className="absolute inset-0 rounded-full bg-accent"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      />
-                    )}
-                    <span className="relative">{link.label}</span>
-                  </Link>
-                )
-              })}
-            </nav>
           </div>
 
-          <div className="flex items-center gap-3">
+          <nav aria-label="Primary" className="hidden xl:flex items-center gap-1 justify-self-center">
+            {navLinks.map((link) => {
+              const isActive = isNavLinkActive(pathname, link.href)
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "relative rounded-full px-4 py-2.5 text-[17px] font-medium transition-colors",
+                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="active-nav-pill"
+                      className="absolute inset-0 rounded-full bg-accent"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative">{link.label}</span>
+                </Link>
+              )
+            })}
+          </nav>
+
+          <div className="flex items-center justify-end gap-3">
             <div className="hidden sm:block">
               <CommandPalette />
             </div>
