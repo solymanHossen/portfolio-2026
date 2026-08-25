@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "MD Solyman Hossen | Full Stack Software Engineer",
-    template: "%s | MD Solyman Hossen",
+    default: "Md Solyman Hossen | Full Stack Software Engineer",
+    template: "%s | Md Solyman Hossen",
   },
   description:
     "Full Stack Software Engineer specialising in scalable web platforms, Next.js, MERN, Laravel, performance optimisation and AI-assisted automation.",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     "REST API Developer",
     "Performance Optimisation Engineer",
   ],
-  authors: [{ name: "MD Solyman Hossen" }],
-  creator: "MD Solyman Hossen",
+  authors: [{ name: "Md Solyman Hossen" }],
+  creator: "Md Solyman Hossen",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: "MD Solyman Hossen | Full Stack Software Engineer",
+    title: "Md Solyman Hossen | Full Stack Software Engineer",
     description:
       "Full Stack Software Engineer specialising in scalable web platforms, Next.js, MERN, Laravel, performance optimisation and AI-assisted automation.",
     siteName,
