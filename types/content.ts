@@ -18,7 +18,7 @@ export interface ExperienceEntry {
  * is impossible here without a type change, not just a style-guide rule.
  */
 export interface SkillCategory {
-  id: "frontend" | "backend" | "data-persistence" | "ai-automation" | "architecture-quality"
+  id: "frontend" | "backend" | "data-persistence" | "ai-automation" | "infrastructure" | "architecture-quality"
   label: string
   description: string
   skills: string[]

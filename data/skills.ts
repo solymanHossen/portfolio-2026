@@ -22,6 +22,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       "Node.js",
       "Express.js",
+      "NestJS",
       "Laravel",
       "REST API design",
       "Authentication and authorisation",
@@ -53,6 +54,12 @@ export const skillCategories: SkillCategory[] = [
       "External API integrations",
       "Business-process automation",
     ],
+  },
+  {
+    id: "infrastructure",
+    label: "Infrastructure & DevOps",
+    description: "Deploying and running services on infrastructure I own end to end.",
+    skills: ["Deployment", "Docker", "Networking", "Tailscale", "Self-hosted infrastructure", "AWS S3"],
   },
   {
     id: "architecture-quality",

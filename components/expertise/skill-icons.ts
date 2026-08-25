@@ -1,4 +1,4 @@
-import { Blocks, Boxes, Database, ServerCog, Sparkles, type LucideIcon } from "lucide-react"
+import { Blocks, Boxes, Database, Server, ServerCog, Sparkles, type LucideIcon } from "lucide-react"
 
 import type { SkillCategory } from "@/types/content"
 
@@ -9,5 +9,6 @@ export const SKILL_CATEGORY_ICONS: Record<SkillCategory["id"], LucideIcon> = {
   backend: ServerCog,
   "data-persistence": Database,
   "ai-automation": Sparkles,
+  infrastructure: Server,
   "architecture-quality": Boxes,
 }
