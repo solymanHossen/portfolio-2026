@@ -30,11 +30,11 @@ export const projects: ProjectSummary[] = [
     title: "Multi-vendor eCommerce Platform",
     category: "Commerce platform",
     tagline: "Multi-vendor commerce with granular, role-based access control.",
-    tags: ["full-stack", "api-integration"],
+    tags: ["full-stack", "mern", "api-integration"],
     problem: "The platform needed reliable multi-vendor support with granular, role-based access control at scale.",
     contribution:
       "Built multi-vendor functionality, implemented granular role-based access control, designed scalable backend workflows and developed reliable frontend integration.",
-    techStack: ["TODO: confirm technology stack"],
+    techStack: ["Node.js","Nest Js", "Express.js", "MongoDB", "React.js"],
     outcome: "Delivered a multi-vendor commerce platform with granular role-based access control.",
     featured: true,
     order: 2,
