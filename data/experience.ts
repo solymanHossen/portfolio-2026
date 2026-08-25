@@ -21,6 +21,8 @@ export const experience: ExperienceEntry[] = [
       "Built a **multi-vendor eCommerce platform** with granular RBAC.",
       "Designed **high-performance REST APIs** for frontend integration.",
       "Developed custom WordPress plugins integrated with external APIs.",
+      "Built backend services with **NestJS and Next.js** for type-safe, full-stack delivery.",
+      "Managed **deployment, Docker and self-hosted infrastructure**, covering networking and security.",
       "Mentored junior developers.",
       "Led code reviews to promote clean and maintainable architecture.",
     ],
