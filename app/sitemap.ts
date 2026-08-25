@@ -6,7 +6,7 @@ import { projects } from "@/data/projects"
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()
 
-  const staticRoutes = ["", "/projects", "/experience", "/about", "/contact", "/resume"].map((path) => ({
+  const staticRoutes = ["", "/projects", "/experience", "/expertise", "/about", "/contact", "/resume"].map((path) => ({
     url: new URL(path, siteUrl).toString(),
     lastModified,
   }))

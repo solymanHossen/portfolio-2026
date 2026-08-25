@@ -5,7 +5,7 @@ import { Clock, FolderKanban, Layers, Mail, User, type LucideIcon } from "lucide
 export const NAV_ICONS: Record<string, LucideIcon> = {
   "/projects": FolderKanban,
   "/experience": Clock,
-  "/#expertise": Layers,
+  "/expertise": Layers,
   "/about": User,
   "/contact": Mail,
 }
