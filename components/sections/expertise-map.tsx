@@ -11,13 +11,13 @@ export function ExpertiseMap() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="font-mono text-xs uppercase tracking-wider text-primary">Technical Expertise</p>
-            <h2 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+            <h2 className="mt-3 max-w-2xl text-5xl font-bold tracking-tight text-balance sm:text-6xl">
               A capability map, not a percentage guess.
             </h2>
           </div>
           <Link
             href="/expertise"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+            className="inline-flex items-center gap-1.5 text-base font-medium text-primary hover:underline"
           >
             View full expertise
             <ArrowRight className="size-4" aria-hidden="true" />

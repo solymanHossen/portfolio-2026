@@ -18,20 +18,20 @@ export function SkillGrid({ categories, variant = "full" }: SkillGridProps) {
         const hiddenCount = category.skills.length - skills.length
 
         return (
-          <div key={category.id} className="rounded-lg border bg-card p-6">
-            <div className="flex size-10 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-primary">
-              <Icon className="size-5" aria-hidden="true" />
+          <div key={category.id} className="rounded-lg border bg-card p-6 sm:p-7">
+            <div className="flex size-12 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-primary">
+              <Icon className="size-6" aria-hidden="true" />
             </div>
-            <h3 className="mt-4 text-base font-semibold text-foreground">{category.label}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{category.description}</p>
+            <h3 className="mt-4 text-xl font-semibold text-foreground">{category.label}</h3>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">{category.description}</p>
             <div className="mt-4 flex flex-wrap gap-1.5">
               {skills.map((skill) => (
-                <Badge key={skill} variant="outline">
+                <Badge key={skill} variant="outline" className="text-sm font-normal">
                   {skill}
                 </Badge>
               ))}
               {hiddenCount > 0 && (
-                <Badge variant="secondary" className="text-muted-foreground">
+                <Badge variant="secondary" className="text-sm font-normal text-muted-foreground">
                   +{hiddenCount} more
                 </Badge>
               )}

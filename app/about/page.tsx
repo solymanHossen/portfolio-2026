@@ -30,7 +30,7 @@ export default function AboutPage() {
 
       <div className="container-page py-16 sm:py-24">
         <p className="font-mono text-xs uppercase tracking-wider text-primary">About</p>
-        <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+        <h1 className="mt-3 max-w-2xl text-5xl font-bold tracking-tight text-balance sm:text-6xl">
           From civil engineering and Bangla studies to AI-driven systems.
         </h1>
 
@@ -45,21 +45,21 @@ export default function AboutPage() {
             />
           </div>
 
-          <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
+          <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
             <p>{aboutBio}</p>
             {aboutStory.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
 
-          <div className="space-y-6 rounded-lg border bg-card p-6">
+          <div className="space-y-6 rounded-lg border bg-card p-6 sm:p-7">
             <div>
-              <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Location</h2>
-              <p className="mt-1 text-sm text-foreground">{site.location}</p>
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Location</h2>
+              <p className="mt-1.5 text-base text-foreground">{site.location}</p>
             </div>
             <div>
-              <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Languages</h2>
-              <ul className="mt-1 space-y-1 text-sm text-foreground">
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Languages</h2>
+              <ul className="mt-1.5 space-y-1 text-base text-foreground">
                 {languages.map((language) => (
                   <li key={language.name}>
                     {language.name} <span className="text-muted-foreground">— {language.proficiency}</span>
@@ -68,14 +68,14 @@ export default function AboutPage() {
               </ul>
             </div>
             <div>
-              <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Interests</h2>
-              <p className="mt-1 text-sm text-foreground">{interests.join(" · ")}</p>
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Interests</h2>
+              <p className="mt-1.5 text-base text-foreground">{interests.join(" · ")}</p>
             </div>
           </div>
         </div>
 
         <div className="mt-10">
-          <p className="mb-3 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+          <p className="mb-3 font-mono text-xs uppercase tracking-wider text-muted-foreground">
             Life outside the terminal — travelling
           </p>
           <div className="grid grid-cols-3 gap-3">

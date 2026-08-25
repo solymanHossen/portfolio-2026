@@ -9,10 +9,10 @@ export function ContactCta() {
     <section className="relative overflow-hidden py-20 sm:py-28">
       <GridBackground variant="grid" className="opacity-50" />
       <div className="container-page relative text-center">
-        <h2 className="mx-auto max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+        <h2 className="mx-auto max-w-2xl text-5xl font-bold tracking-tight text-balance sm:text-6xl">
           {contactCta.headline}
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground">{contactCta.supportingText}</p>
+        <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">{contactCta.supportingText}</p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           {contactCta.buttons.map((button, index) => (
@@ -28,7 +28,7 @@ export function ContactCta() {
           ))}
         </div>
 
-        <dl className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-2 text-sm text-muted-foreground sm:flex-row sm:justify-center sm:gap-6">
+        <dl className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-2 text-base text-muted-foreground sm:flex-row sm:justify-center sm:gap-6">
           <div>
             <dt className="sr-only">Email</dt>
             <dd>{site.email}</dd>
