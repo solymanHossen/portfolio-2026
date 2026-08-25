@@ -28,14 +28,14 @@ export default function ExperiencePage() {
       />
 
       <p className="font-mono text-xs uppercase tracking-wider text-primary">Professional Experience</p>
-      <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+      <h1 className="mt-3 max-w-2xl text-5xl font-bold tracking-tight text-balance sm:text-6xl">
         A track record of shipping and leading.
       </h1>
-      <p className="mt-4 max-w-2xl text-base text-muted-foreground">
+      <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
         Four years across two roles at Mediusware Ltd and remote freelance delivery for international clients.
       </p>
 
-      <div className="mt-14 max-w-3xl">
+      <div className="mt-10 max-w-3xl">
         <Timeline entries={experience} variant="full" />
       </div>
     </div>

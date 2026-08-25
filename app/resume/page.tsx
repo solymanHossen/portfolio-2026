@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 import { Download } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { HighlightedText } from "@/components/experience/highlighted-text"
 import { formatDateRange } from "@/lib/format"
 import { buildMetadata } from "@/lib/metadata"
 import { aboutBio, site } from "@/data/site"
@@ -86,7 +87,9 @@ export default function ResumePage() {
                 <p className="text-xs text-muted-foreground">{entry.location}</p>
                 <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground">
                   {entry.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
+                    <li key={highlight}>
+                      <HighlightedText text={highlight} />
+                    </li>
                   ))}
                 </ul>
               </div>
