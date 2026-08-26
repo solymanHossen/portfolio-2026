@@ -209,6 +209,16 @@
   animation: marquee 16s linear infinite;
 }
 
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@utility animate-skeleton-shimmer {
+  animation: skeleton-shimmer 1.8s ease-in-out infinite;
+}
+
 /* Force a legible light palette when printing, regardless of active theme. */
 @media print {
   :root,
