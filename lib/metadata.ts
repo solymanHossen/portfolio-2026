@@ -3,7 +3,7 @@ import { env } from "./env"
 
 export const siteUrl = env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
 
-export const siteName = "MD Solyman Hossen"
+export const siteName = "Md Solyman Hossen"
 
 interface RouteMetadataInput {
   title: string

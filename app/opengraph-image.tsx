@@ -23,7 +23,7 @@ export default function Image() {
           Full Stack Software Engineer
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", fontSize: 68, fontWeight: 700, lineHeight: 1.1 }}>MD Solyman Hossen</div>
+          <div style={{ display: "flex", fontSize: 68, fontWeight: 700, lineHeight: 1.1 }}>Md Solyman Hossen</div>
           <div style={{ display: "flex", marginTop: 24, fontSize: 30, color: "#a3a3a3" }}>
             Engineering scalable systems for an AI-driven world.
           </div>

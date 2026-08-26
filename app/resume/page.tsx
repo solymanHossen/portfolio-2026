@@ -14,7 +14,7 @@ import { skillCategories } from "@/data/skills"
 
 export const metadata: Metadata = buildMetadata({
   title: "Resume",
-  description: "Resume for MD Solyman Hossen, Full Stack Software Engineer specialising in scalable, AI-driven systems.",
+  description: "Resume for Md Solyman Hossen, Full Stack Software Engineer specialising in scalable, AI-driven systems.",
   path: "/resume",
 })
 

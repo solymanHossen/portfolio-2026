@@ -8,7 +8,7 @@ import { breadcrumbJsonLd } from "@/lib/structured-data"
 export const metadata: Metadata = buildMetadata({
   title: "Expertise",
   description:
-    "A capability map of MD Solyman Hossen's technical expertise across frontend, backend, data, AI automation and architecture.",
+    "A capability map of Md Solyman Hossen's technical expertise across frontend, backend, data, AI automation and architecture.",
   path: "/expertise",
 })
 

@@ -1,5 +1,5 @@
 export const site = {
-  name: "MD Solyman Hossen",
+  name: "Md Solyman Hossen",
   shortName: "Solyman Hossen",
   monogram: "SH",
   title: "Full Stack Software Engineer",
