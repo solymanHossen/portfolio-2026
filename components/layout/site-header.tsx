@@ -19,9 +19,9 @@ export function SiteHeader() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-4 z-40 px-4 print:hidden">
+    <header className="sticky top-0 z-40 print:hidden sm:top-4 sm:px-4">
       <div className="container-page">
-        <div className="grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4 rounded-full border bg-background/85 px-4 shadow-sm backdrop-blur supports-backdrop-filter:bg-background/70">
+        <div className="-mx-4 grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4 rounded-none border-b bg-background/85 px-4 shadow-sm backdrop-blur supports-backdrop-filter:bg-background/70 sm:mx-0 sm:rounded-full sm:border">
           <div className="col-start-1 flex items-center">
             <Tooltip>
               <TooltipTrigger asChild>
