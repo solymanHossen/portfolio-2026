@@ -12,7 +12,7 @@ import { ContactCta } from "@/components/sections/contact-cta"
 import { buildMetadata } from "@/lib/metadata"
 
 export const metadata: Metadata = buildMetadata({
-  title: "MD Solyman Hossen | Full Stack Software Engineer",
+  title: "Md Solyman Hossen | Full Stack Software Engineer",
   description:
     "Full Stack Software Engineer specialising in scalable web platforms, Next.js, MERN, Laravel, performance optimisation and AI-assisted automation.",
   path: "/",

@@ -10,9 +10,9 @@ export default function NotFound() {
       <GridBackground variant="grid" className="opacity-60" />
       <div className="container-page relative">
         <p className="font-mono text-xs uppercase tracking-wider text-primary">System Error</p>
-        <h1 className="mt-4 flex flex-wrap items-baseline gap-4 text-5xl font-bold tracking-tight sm:text-6xl">
+        <h1 className="mt-4 flex flex-wrap items-baseline gap-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           <span className="font-mono text-primary">404</span>
-          <span className="text-2xl font-medium text-muted-foreground sm:text-3xl">Route not found</span>
+          <span className="text-xl font-medium text-muted-foreground sm:text-2xl lg:text-3xl">Route not found</span>
         </h1>
         <p className="mt-4 max-w-xl font-mono text-sm text-muted-foreground">
           ERR_ROUTE_UNRESOLVED — the path you requested doesn&rsquo;t map to anything in this system.

@@ -28,7 +28,7 @@ export default function ExpertisePage() {
       />
 
       <p className="font-mono text-xs uppercase tracking-wider text-primary">Technical Expertise</p>
-      <h1 className="mt-3 max-w-2xl text-5xl font-bold tracking-tight text-balance sm:text-6xl">
+      <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
         A capability map, not a percentage guess.
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-muted-foreground">

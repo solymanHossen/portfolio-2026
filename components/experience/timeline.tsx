@@ -21,7 +21,7 @@ export function Timeline({ entries, variant = "full" }: TimelineProps) {
               className="absolute -left-[41px] top-1 size-4 rounded-full border-4 border-background bg-primary"
             />
             <p className="font-mono text-sm text-primary">{formatDateRange(entry.startDate, entry.endDate)}</p>
-            <h3 className="mt-1 text-2xl font-bold tracking-tight text-foreground">{entry.role}</h3>
+            <h3 className="mt-1 text-xl font-bold tracking-tight text-foreground sm:text-2xl">{entry.role}</h3>
             <p className="mt-1 text-lg text-muted-foreground">
               {entry.company} · {entry.location}
             </p>

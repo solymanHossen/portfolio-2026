@@ -11,7 +11,7 @@ export function ExperiencePreview() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="font-mono text-xs uppercase tracking-wider text-primary">Professional Experience</p>
-            <h2 className="mt-3 text-5xl font-bold tracking-tight text-balance sm:text-6xl">
+            <h2 className="mt-3 text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
               A track record of shipping and leading.
             </h2>
           </div>

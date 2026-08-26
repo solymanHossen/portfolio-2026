@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <div className="container-page py-16 sm:py-24">
       <p className="font-mono text-xs uppercase tracking-wider text-primary">Contact</p>
-      <h1 className="mt-3 max-w-2xl text-5xl font-bold tracking-tight text-balance sm:text-6xl">
+      <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
         Let&rsquo;s build a system that is designed to scale.
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-muted-foreground">

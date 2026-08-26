@@ -17,7 +17,7 @@ export default function ProjectsPage() {
   return (
     <div className="container-page py-16 sm:py-24">
       <p className="font-mono text-xs uppercase tracking-wider text-primary">Projects</p>
-      <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+      <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
         Systems I&rsquo;ve helped design, optimise and scale.
       </h1>
       <p className="mt-4 max-w-2xl text-base text-muted-foreground">

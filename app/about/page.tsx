@@ -30,7 +30,7 @@ export default function AboutPage() {
 
       <div className="container-page py-16 sm:py-24">
         <p className="font-mono text-xs uppercase tracking-wider text-primary">About</p>
-        <h1 className="mt-3 max-w-2xl text-5xl font-bold tracking-tight text-balance sm:text-6xl">
+        <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
           From civil engineering and Bangla studies to AI-driven systems.
         </h1>
 

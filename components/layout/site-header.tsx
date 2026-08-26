@@ -22,7 +22,7 @@ export function SiteHeader() {
     <header className="sticky top-4 z-40 px-4 print:hidden">
       <div className="container-page">
         <div className="grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4 rounded-full border bg-background/85 px-4 shadow-sm backdrop-blur supports-backdrop-filter:bg-background/70">
-          <div className="flex items-center">
+          <div className="col-start-1 flex items-center">
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link href="/" className="relative flex items-center gap-2" aria-label={`${site.name} — home`}>
@@ -35,11 +35,12 @@ export function SiteHeader() {
                   </span>
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="bottom">{site.availability}</TooltipContent>
+              <TooltipContent side="bottom" className="hidden sm:block">
+                {site.availability}
+              </TooltipContent>
             </Tooltip>
           </div>
-
-          <nav aria-label="Primary" className="hidden xl:flex items-center gap-1 justify-self-center">
+          <nav aria-label="Primary" className="col-start-2 hidden items-center gap-1 justify-self-center xl:flex">
             {navLinks.map((link) => {
               const isActive = isNavLinkActive(pathname, link.href)
 
@@ -65,8 +66,7 @@ export function SiteHeader() {
               )
             })}
           </nav>
-
-          <div className="flex items-center justify-end gap-3">
+          <div className="col-start-3 flex items-center justify-end gap-3">
             <div className="hidden sm:block">
               <CommandPalette />
             </div>

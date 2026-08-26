@@ -17,7 +17,7 @@ export function Hero() {
           <div className="flex flex-col justify-center">
             <div aria-hidden="true" className="mb-6 h-1 w-12 rounded-full bg-primary" />
             <p className="font-mono text-sm uppercase tracking-wider text-primary">{hero.label}</p>
-            <h1 className="mt-5 text-5xl font-semibold tracking-tight text-balance sm:text-6xl">
+            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
               {hero.headline}
             </h1>
             <p className="mt-6 text-xl text-muted-foreground">{hero.supportingHeadline}</p>

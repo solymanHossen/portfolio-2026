@@ -32,7 +32,9 @@ export function ProjectCard({ project }: { project: ProjectSummary }) {
       <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">{project.category}</p>
-          <h3 className="mt-3 text-4xl font-semibold text-foreground text-balance">{project.title}</h3>
+          <h3 className="mt-3 text-2xl font-semibold text-foreground text-balance sm:text-3xl lg:text-4xl">
+            {project.title}
+          </h3>
           <p className="mt-3 text-lg text-muted-foreground">{project.tagline}</p>
           <div className="mt-5 flex flex-wrap gap-2">
             {project.techStack.map((tech) =>

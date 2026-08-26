@@ -18,7 +18,7 @@ export function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
         </Link>
 
         <p className="mt-6 font-mono text-xs uppercase tracking-wider text-primary">{caseStudy.category}</p>
-        <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+        <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
           {caseStudy.title}
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">{caseStudy.tagline}</p>
