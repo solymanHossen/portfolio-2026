@@ -14,7 +14,7 @@ export function Hero() {
       <div className="container-page relative pt-4 pb-20 sm:py-28">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-12">
           {/* Left: headline, copy, CTAs */}
-          <div className="relative order-2 -mt-10 flex flex-col justify-center rounded-t-[2rem] bg-background pt-8 shadow-[0_-16px_40px_-24px_rgba(0,0,0,0.25)] sm:order-none sm:mt-0 sm:rounded-none sm:bg-transparent sm:pt-0 sm:shadow-none">
+          <div className="relative order-2 -mt-10 flex flex-col justify-center sm:rounded-t-[2rem] bg-background pt-8 sm:shadow-[0_-16px_40px_-24px_rgba(0,0,0,0.25)] sm:order-none sm:mt-0 sm:rounded-none sm:bg-transparent sm:pt-0 sm:shadow-none">
             <div aria-hidden="true" className="mb-6 h-1 w-12 rounded-full bg-primary" />
             <p className="font-mono text-sm uppercase tracking-wider text-primary">{hero.label}</p>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
@@ -38,7 +38,7 @@ export function Hero() {
           </div>
 
           {/* Right: full-bleed photo */}
-          <div className="relative order-1 -mx-4 aspect-4/5 min-h-95 overflow-hidden rounded-b-[2rem] rounded-t-none sm:order-none sm:mx-0 sm:min-h-105 sm:rounded-2xl lg:aspect-auto lg:min-h-125">
+          <div className="relative order-1 -mx-4 aspect-4/5 min-h-95 overflow-hidden rounded-b-[2rem] rounded-t-none shadow-[0_24px_60px_-24px_rgba(0,0,0,0.4)] sm:order-none sm:mx-0 sm:min-h-105 sm:rounded-2xl sm:shadow-none lg:aspect-auto lg:min-h-125">
             <Image
               src="/images/portrait-hero-2.jpg"
               alt={`${site.name}, ${site.title}, on location in Bangladesh`}

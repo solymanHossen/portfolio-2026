@@ -21,7 +21,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 print:hidden sm:top-4 sm:px-4">
       <div className="container-page">
-        <div className="-mx-4 grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4 rounded-none border-b bg-background/85 px-4 shadow-sm backdrop-blur supports-backdrop-filter:bg-background/70 sm:mx-0 sm:rounded-full sm:border">
+        <div className="-mx-4 grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4 rounded-none border-b bg-background px-4 shadow-sm sm:mx-0 sm:rounded-full sm:border sm:bg-background/85 sm:backdrop-blur sm:supports-backdrop-filter:bg-background/70">
           <div className="col-start-1 flex items-center">
             <Tooltip>
               <TooltipTrigger asChild>

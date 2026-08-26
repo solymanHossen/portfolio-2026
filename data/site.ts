@@ -8,7 +8,7 @@ export const site = {
   email: "solyman100200@gmail.com",
   phone: "+880 1780-409811",
   phoneHref: "+8801780409811",
-  linkedIn: "https://www.linkedin.com/in/solyman-hossen",
+  linkedIn: "https://www.linkedin.com/in/solyman-hossen-46504b226",
   availability: "Available for select opportunities",
 } as const
 
@@ -65,6 +65,6 @@ export const contactCta = {
   buttons: [
     { label: "Start a Conversation", href: "/contact" },
     { label: "Send an Email", href: `mailto:${site.email}` },
-    { label: "View LinkedIn", href: "https://www.linkedin.com/in/solyman-hossen" },
+    { label: "View LinkedIn", href: site.linkedIn },
   ],
 } as const
