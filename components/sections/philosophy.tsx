@@ -5,7 +5,7 @@ export function Philosophy() {
     <section className="border-b py-20 sm:py-28">
       <div className="container-page">
         <p className="font-mono text-xs uppercase tracking-wider text-primary">Engineering Philosophy</p>
-        <h2 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+        <h2 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
           How I approach engineering
         </h2>
 

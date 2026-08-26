@@ -1,4 +1,4 @@
-# MD Solyman Hossen — Portfolio
+# Md Solyman Hossen — Portfolio
 
 Personal portfolio for MD Solyman Hossen, Full Stack Software Engineer. Built with Next.js App Router, TypeScript, Tailwind CSS v4 and shadcn/ui under a custom design identity — "Intelligent Systems Command Center."
 

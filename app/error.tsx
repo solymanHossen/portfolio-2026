@@ -16,7 +16,7 @@ export default function ErrorPage({ error, reset }: { error: Error & { digest?: 
       <GridBackground variant="grid" className="opacity-60" />
       <div className="container-page relative">
         <p className="font-mono text-xs uppercase tracking-wider text-destructive">System Error</p>
-        <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Something broke on this route.</h1>
+        <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">Something broke on this route.</h1>
         <p className="mt-4 max-w-xl font-mono text-sm text-muted-foreground">
           ERR_UNHANDLED_EXCEPTION — the error has been logged. Try again, or head back to the homepage.
         </p>

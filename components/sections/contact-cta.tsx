@@ -9,7 +9,7 @@ export function ContactCta() {
     <section className="relative overflow-hidden py-20 sm:py-28">
       <GridBackground variant="grid" className="opacity-50" />
       <div className="container-page relative text-center">
-        <h2 className="mx-auto max-w-2xl text-5xl font-bold tracking-tight text-balance sm:text-6xl">
+        <h2 className="mx-auto max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
           {contactCta.headline}
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">{contactCta.supportingText}</p>

@@ -27,7 +27,7 @@ export function AboutPreview() {
 
           <div>
             <p className="font-mono text-xs uppercase tracking-wider text-primary">About</p>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+            <h2 className="mt-3 text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
               The engineer behind the systems.
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">{aboutBio}</p>
