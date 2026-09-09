@@ -26,10 +26,6 @@ export default function Home() {
       <ImpactMetrics />
       <ExperiencePreview />
       <ExpertiseMap />
-      <Philosophy />
-      <AboutPreview />
-      <Education />
-      <ContactCta />
     </>
   )
 }
