@@ -1,6 +1,5 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { GridBackground } from "@/components/visuals/grid-background"
@@ -39,10 +38,17 @@ export function Hero() {
 
           {/* Right: floating cutout portrait over the grid pattern */}
           <div className="relative order-1 flex min-h-110 items-end justify-center sm:min-h-130 lg:min-h-150">
+            {/* ambient color glow, stronger in dark mode */}
             <div
               aria-hidden="true"
-              className="absolute left-1/2 top-1/3 size-88 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl"
+              className="absolute left-1/2 top-1/3 size-88 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl dark:bg-primary/25"
             />
+            {/* soft light behind the hair to blend the cutout edge on dark backgrounds */}
+            <div
+              aria-hidden="true"
+              className="absolute left-1/2 top-[18%] size-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/0 blur-2xl dark:bg-white/10"
+            />
+
             <div className="relative h-full w-full max-w-sm sm:max-w-md lg:max-w-lg">
               <Image
                 src="/images/hero-cutout.png"
@@ -56,32 +62,25 @@ export function Hero() {
                   WebkitMaskImage: "linear-gradient(to bottom, black 92%, transparent 100%)",
                 }}
               />
+              {/* grounding shadow so the figure doesn't look like it's floating */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-10 bottom-2 h-6 rounded-full bg-foreground/10 blur-xl dark:bg-black/50"
+              />
             </div>
-            <Link
-              href="/about"
-              className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full border bg-background/90 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur transition-colors hover:bg-background"
-            >
-              About Me
-              <ArrowUpRight className="size-3" aria-hidden="true" />
-            </Link>
 
-            <div className="absolute inset-x-4 bottom-5 flex flex-wrap items-center gap-2">
+            <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-center gap-2">
               <div className="inline-flex items-center gap-2 rounded-full border bg-background/90 px-3.5 py-2 backdrop-blur">
+                <span className="relative flex size-2" aria-hidden="true">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75" />
+                  <span className="relative inline-flex size-2 rounded-full bg-primary" />
+                </span>
                 <span className="text-sm font-semibold text-foreground">{site.shortName}</span>
                 <span aria-hidden="true" className="text-muted-foreground">
                   ·
                 </span>
                 <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                   {site.location}
-                </span>
-              </div>
-              <div className="inline-flex items-center gap-2 rounded-full border bg-background/90 px-3.5 py-2 backdrop-blur">
-                <span className="relative flex size-2" aria-hidden="true">
-                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75" />
-                  <span className="relative inline-flex size-2 rounded-full bg-primary" />
-                </span>
-                <span className="font-mono text-xs uppercase tracking-wider text-primary">
-                  {site.availability}
                 </span>
               </div>
             </div>
