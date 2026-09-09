@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Geist_Mono, Inter, Space_Grotesk } from "next/font/google"
+import { Geist_Mono, Nunito_Sans, Space_Grotesk } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
@@ -12,7 +12,7 @@ import { siteName, siteUrl } from "@/lib/metadata"
 import { personJsonLd, websiteJsonLd } from "@/lib/structured-data"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" })
+const nunitoSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-nunito-sans", display: "swap" })
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -98,7 +98,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${spaceGrotesk.variable} ${geistMono.variable}`}
+      className={`${nunitoSans.variable} ${spaceGrotesk.variable} ${geistMono.variable}`}
     >
       <head>
         <script
