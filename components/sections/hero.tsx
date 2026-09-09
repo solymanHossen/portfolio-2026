@@ -17,10 +17,10 @@ export function Hero() {
           <div className="relative order-2 -mt-10 flex flex-col justify-center sm:rounded-t-[2rem] bg-background pt-8 sm:shadow-[0_-16px_40px_-24px_rgba(0,0,0,0.25)] sm:order-none sm:mt-0 sm:rounded-none sm:bg-transparent sm:pt-0 sm:shadow-none">
             <div aria-hidden="true" className="mb-6 h-1 w-12 rounded-full bg-primary" />
             <p className="font-mono text-sm uppercase tracking-wider text-primary">{hero.label}</p>
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
               {hero.headline}
             </h1>
-            <p className="mt-6 text-xl text-muted-foreground">{hero.supportingHeadline}</p>
+            <p className="mt-6 text-xl text-muted-foreground sm:text-2xl">{hero.supportingHeadline}</p>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Button asChild size="lg" className="h-14 rounded-full px-8 text-base transition-transform hover:-translate-y-0.5">
@@ -37,20 +37,26 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right: full-bleed photo */}
-          <div className="relative order-1 -mx-4 aspect-4/5 min-h-95 overflow-hidden sm:rounded-b-[2rem] rounded-t-none shadow-[0_24px_60px_-24px_rgba(0,0,0,0.4)] sm:order-none sm:mx-0 sm:min-h-105 sm:rounded-2xl sm:shadow-none lg:aspect-auto lg:min-h-125">
-            <Image
-              src="/images/portrait-hero-2.jpg"
-              alt={`${site.name}, ${site.title}, on location in Bangladesh`}
-              fill
-              priority
-              sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover object-top"
-            />
+          {/* Right: floating cutout portrait over the grid pattern */}
+          <div className="relative order-1 flex min-h-110 items-end justify-center sm:min-h-130 lg:min-h-150">
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent"
+              className="absolute left-1/2 top-1/3 size-88 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl"
             />
+            <div className="relative h-full w-full max-w-sm sm:max-w-md lg:max-w-lg">
+              <Image
+                src="/images/hero-cutout.png"
+                alt={`${site.name}, ${site.title}, on location in Bangladesh`}
+                fill
+                priority
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-contain object-bottom"
+                style={{
+                  maskImage: "linear-gradient(to bottom, black 92%, transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to bottom, black 92%, transparent 100%)",
+                }}
+              />
+            </div>
             <Link
               href="/about"
               className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full border bg-background/90 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur transition-colors hover:bg-background"
